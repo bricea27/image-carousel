@@ -12,6 +12,8 @@ type ResponseObject = {
   data: ImageData;
 };
 
+const ALLOWED_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif"];
+
 export const useImages = () => {
   const [images, setImages] = useState<Image[]>([]);
 
@@ -26,11 +28,19 @@ export const useImages = () => {
       }
 
       setImages(
-        response.data.children.map((child: ResponseObject): Image => {
-          return {
-            url: child.data.url_overridden_by_dest,
-          };
-        })
+        response.data.children
+          // Only return valid images
+          .filter((child: ResponseObject) => {
+            return ALLOWED_EXTENSIONS.some((extension) => {
+              return child.data.url_overridden_by_dest.includes(extension);
+            });
+          })
+          // Simplify the response
+          .map((child: ResponseObject): Image => {
+            return {
+              url: child.data.url_overridden_by_dest,
+            };
+          })
       );
     } catch (e) {
       setImages([]);
