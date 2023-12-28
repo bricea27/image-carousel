@@ -3,7 +3,7 @@ This repository is my solution to frontendeval's [Image Carousel prompt](https:/
 
 ## Requirements
 - [x] Fetch images from the [endpoint](https://www.reddit.com/r/aww/top/.json?t=all)
-- [] Cycle to the next image every 3 seconds
+- [x] Cycle to the next image every 3 seconds
 - [x] Allow the user to skip to the next/previous image
 
 ## Architecture
