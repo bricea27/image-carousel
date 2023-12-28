@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './Carousel.css'
+
 interface Props {
 	children: React.ReactNode
 }
@@ -28,10 +30,10 @@ export const Carousel = (props: Props) => {
 	}
 
 	return (
-		<ul>
-			<button onClick={handleSelectPrevious}>Prev</button>
+		<section>
+			<button onClick={handleSelectPrevious}>&#9664;</button>
 			{children.find((_, index) => index === activeIndex)}
-			<button onClick={handleSelectNext}>Next</button>
-		</ul>
+			<button onClick={handleSelectNext}>&#9654;</button>
+		</section>
 	)
 }	
