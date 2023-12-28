@@ -1,6 +1,9 @@
 # Image Carousel
 This repository is my solution to frontendeval's [Image Carousel prompt](https://frontendeval.com/questions/image-carousel).
 
+## Demo
+You can view a hosted version of this repository, [here](https://image-carousel-pied.vercel.app/).
+
 ## Requirements
 - [x] Fetch images from the [endpoint](https://www.reddit.com/r/aww/top/.json?t=all)
 - [x] Cycle to the next image every 3 seconds
