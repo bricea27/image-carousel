@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import './Carousel.css'
 
@@ -11,23 +11,31 @@ export const Carousel = (props: Props) => {
 
 	const [activeIndex, setActiveIndex] = useState(0);
 
-	const handleSelectPrevious = () => {
-		setActiveIndex(currentIndex => {
-			if (currentIndex === 0) {
+	const handleSelectPrevious = useCallback(() => {
+		setActiveIndex(() => {
+			if (activeIndex === 0) {
 				return children.length - 1;
 			}
-			return currentIndex - 1;
+			return activeIndex - 1;
 		});
-	}
+	}, [activeIndex, children.length])
 
-	const handleSelectNext = () => {
-		setActiveIndex(currentIndex => {
-			if (currentIndex === children.length - 1) {
+	const handleSelectNext = useCallback(() => {
+		setActiveIndex(() => {
+			if (activeIndex === children.length - 1) {
 				return 0;
 			}
-			return currentIndex + 1;
+			return activeIndex + 1;
 		});
-	}
+	}, [activeIndex, children.length])
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			handleSelectNext();
+		}, 3000);
+
+		return () => clearTimeout(timer);
+	}, [children.length, handleSelectNext])
 
 	return (
 		<section>
