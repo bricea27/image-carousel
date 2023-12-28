@@ -2,9 +2,9 @@
 This repository is my solution to frontendeval's [Image Carousel prompt](https://frontendeval.com/questions/image-carousel).
 
 ## Requirements
-- [] Fetch images from the [endpoint](https://www.reddit.com/r/aww/top/.json?t=all)
+- [x] Fetch images from the [endpoint](https://www.reddit.com/r/aww/top/.json?t=all)
 - [] Cycle to the next image every 3 seconds
-- [] Allow the user to skip to the next/previous image
+- [x] Allow the user to skip to the next/previous image
 
 ## Architecture
 I wanted to take a moment to think through the component / data structure of this project before implementing any changes. I had several initial thoughts...
