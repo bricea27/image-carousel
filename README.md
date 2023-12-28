@@ -29,4 +29,7 @@ As for data fetching, I wanted to store the logic inside of a custom hook, so th
 For my solution, I've chosen to use [Vite](https://vitejs.dev/guide/) with [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/docs/). Vite is incredibly fast and easy to spin up, and can be easily deployed to [Vercel](https://vercel.com/) for a simple hosting solution.
 
 ## Todos
-TBD
+If I had more time, I would have liked to...
+- Add better UX to the next / previous buttons - hover / focus state, etc
+- Add more comprehensive / responsive styling in general
+- Improve accessibilty - I could have kept the metadata on the response objects, and use them to build out aria attributes on the dynamic `img` tags
