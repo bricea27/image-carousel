@@ -30,6 +30,8 @@ For my solution, I've chosen to use [Vite](https://vitejs.dev/guide/) with [Reac
 
 ## Todos
 If I had more time, I would have liked to...
-- Add better UX to the next / previous buttons - hover / focus state, etc
+- Improve the UX of the next / previous buttons - hover / focus state, etc
+- Add some sort of loading state to smooth over the transition before the images are returned
+- Add transitions to the image cycling
 - Add more comprehensive / responsive styling in general
 - Improve accessibilty - I could have kept the metadata on the response objects, and use them to build out aria attributes on the dynamic `img` tags
